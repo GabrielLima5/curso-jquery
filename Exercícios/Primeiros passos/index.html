@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Primeiros passos com jQuery</title>
+    
+</head>
+<body>
+    <h1 id="title">Esse é meu primeiro código jQuery</h1>
+    <img src="hcode.png" alt="Hcode">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+    
+    <script>
+        function initPage(){
+            alert('Minha página carregou!')
+            console.log('página ok')
+        }
+
+        function stylizeTitle(){
+            document.getElementById('title').style.color = 'red'
+        }
+
+        // window.onload = initPage(), stylizeTitle()
+        $(document).ready(function(){
+            initPage()
+            stylizeTitle()
+        })
+    /*
+        $(document).ready(function(){
+            document.getElementById('titulo').style.color = 'red'
+        })
+    */
+    /*
+        window.onload = function(){
+            document.getElementById('titulo').style.color = 'red'
+        }
+    */
+    </script>
+</body>
+</html>

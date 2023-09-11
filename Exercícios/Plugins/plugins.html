@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery Plugins</title>
+</head>
+<body>
+    <h1>Hcode Treinamentos</h1>
+
+    <h2>Seção de plugins</h2>
+
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+
+    <script>
+        (function($){
+            $.fn.changeText = function(params){
+
+                let defaults = {
+                    fontSize: '30px',
+                    color: '#ccc',
+                    fontFamily: 'Verdana'
+                }
+
+                let options = $.extend(defaults, params)
+
+                return this.each(function(){
+                    $(this).css({
+                        'font-size': options.fontSize + 'px',
+                        'color': options.color,
+                        'font-family': options.fontFamily
+                    })
+                })
+            }
+
+            $(document).ready(function(){
+                $('h2').changeText({
+                    fontSize: '40px',
+                    fontFamily: 'Arial'
+                }).css('color', 'blue')
+            })
+        })(jQuery)
+    </script>
+</body>
+</html>
